@@ -1,0 +1,75 @@
+---
+---
+
+// colors - 水杉中文主题（淡绿色系）
+[data-dark="false"] {
+  --primary: #5FB878;        // 水杉绿 - 主色调
+  --secondary: #A7D8A7;      // 淡绿色 - 次要色
+  --accent: #7ECBA5;         // 青绿色 - 强调色
+  --text: #2C3E2F;           // 深绿灰 - 文字颜色
+  --background: #F8FBF8;     // 极淡绿 - 背景色
+  --background-alt: #FFFFFF; // 白色 - 备用背景
+  --light-gray: #E8F3E8;     // 淡绿灰
+  --gray: #7A9A7A;           // 中性绿灰
+  --dark-gray: #4A5D4A;      // 深绿灰
+  --overlay: #00000015;      // 半透明遮罩
+}
+[data-dark="true"] {
+  --primary: #7FD4A0;        // 柔和的绿色
+  --secondary: #5A9A70;      // 深绿色
+  --text: #E8F5EA;           // 淡绿白色文字
+  --background: #1A2E1F;     // 深绿背景
+  --background-alt: #263A2B; // 深绿备用背景
+  --light-gray: #3A4F3E;     // 淡绿灰
+  --gray: #6B8E6F;           // 中性绿
+  --dark-gray: #9CB89F;      // 浅绿灰
+  --overlay: #ffffff10;      // 半透明遮罩
+}
+
+* {
+  font-size: 1em;
+}
+
+:root {
+  // font families
+  --title: "Helvetica Neue", sans-serif;
+  --heading: "Barlow", sans-serif;
+  --body: "Barlow", sans-serif;
+  --code: "Roboto Mono", monospace;
+
+  // font sizes
+  --small: 0.8em;
+  --large: 1.5rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+
+  // font weights
+  --thin: 200;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+
+  // text line spacing
+  --spacing: 2;
+  --compact: 1.5;
+
+  // effects
+  --rounded: 8px;  // 更圆润的边角
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);  // 更柔和的阴影
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);  // 更平滑的过渡效果
+}
+
+
+// 中文字体优化
+:lang(zh) {
+  --title: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+  --heading: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+  --body: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Hiragino Sans GB", sans-serif;
+}
+
+// Japanese override
+:lang(jp) {
+  --title: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --heading: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}

@@ -1,0 +1,39 @@
+titles:
+  home: 首页
+  services: 平台服务
+  research: 研究成果
+  projects: 研究项目
+  team: 团队
+  blog: 新闻动态
+  contact: 联系我们
+  slider: 最新动态
+  
+tooltips:
+  home: 返回首页
+  services: 平台功能和服务介绍
+  research: 研究成果和学术论文
+  projects: 水杉中文项目介绍
+  team: 项目团队成员
+  blog: 项目动态和最新消息
+  contact: 联系方式和地址
+
+roles:
+  PI: 教授
+  AP: 助理教授
+  VR: 客座研究员
+  S: 秘书
+  PhD: 博士生
+  M: 硕士生
+  Visit: 访问学者
+  B: 本科生
+  PD: 博士后研究员
+  IS: 交换学生
+
+contact:
+  address_title: 地址与联系方式
+  lab_title: 水杉中文项目团队
+  access_title: 访问我们
+
+subtext:
+  goal: "项目目标：利用AI技术打造创新的国际中文在线学习平台。"
+  tools: "核心技术：人工智能、自然语言处理、在线教育、个性化学习。"

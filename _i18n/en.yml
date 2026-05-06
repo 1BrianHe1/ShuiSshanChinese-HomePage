@@ -1,0 +1,46 @@
+titles:
+  home: Home
+  services: Platform Services
+  research: Publications
+  projects: Projects
+  team: Team
+  blog: News
+  contact: Contact
+  slider: Latest News
+
+tooltips:
+  home: Back to homepage
+  services: Platform features and services
+  research: Published works
+  projects: Robots, softwares, datasets, and more.
+  team: About our team
+  blog: Events/awards news
+  contact: Email, address, and location
+  assignment: About Laboratory Assignment
+
+roles:
+  PI: Professor
+  AP: Assistant Professor
+  VR: Visiting Researcher
+  S: Secretary
+  PhD: D
+  M: M
+  Visit: Visiting Scholar
+  B: B
+  PD: Postdoctoral Researcher	
+  IS: Exchange Student
+
+contact:
+  address_title: Address & Contact Information
+  lab_title: Advanced Intelligent System Lab.(AIS Lab.)
+  access_title: Access to university
+
+assignment:
+  assignment_title: Laboratory Assignment
+  openlab_title: Laboratory Open(Open Lab.)
+  assignment_contents: Contents
+  about_assignment: About Laboratory Assignment
+
+subtext:
+  goal: "Goal: To explore interaction as a core concept across deep learning and robotics."
+  tools: "Tools: robotics, computer vision, machine learning, mixed reality."

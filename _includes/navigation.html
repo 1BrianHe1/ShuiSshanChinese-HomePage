@@ -1,0 +1,23 @@
+<!-- 固定导航栏 - 右上角 -->
+<nav class="fixed-nav">
+    <div class="nav-links">
+        {% assign pages = site.pages
+            | where_exp: "page", "page.nav"
+            | sort: "nav.order"
+        %}
+        {% for page in pages %}
+        {% if page.nav %}
+            <a href="{{site.baseurl_root}}/{{site.lang}}{{ page.dir | uri_escape }}">
+                {% t page.title %}
+            </a>
+        {% endif %}
+        {% endfor %}
+        
+        <!-- 语言切换 -->
+        {% if site.lang == "zh" %}
+        <a class="lang-switch" href="{{site.baseurl_root}}/en{{ page.url | url_escape | remove_first:'/zh' }}">EN</a>
+        {% else %}
+        <a class="lang-switch" href="{{site.baseurl_root}}/zh{{ page.url | url_escape | remove_first:'/en' }}">中文</a>
+        {% endif %}
+    </div>
+</nav>

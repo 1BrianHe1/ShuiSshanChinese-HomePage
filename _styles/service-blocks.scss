@@ -1,0 +1,288 @@
+---
+---
+
+// 服务板块容器 - 纵向单列布局
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+}
+
+// 平台服务板块样式
+.service-section {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(95, 184, 120, 0.15);
+  transition: all 0.3s ease;
+  width: 100%;
+  
+  &:hover {
+    box-shadow: 0 8px 30px rgba(95, 184, 120, 0.25);
+    transform: translateY(-4px);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 30px;
+  }
+  
+  // 板块标题
+  .section-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 4px solid var(--primary);
+    
+    // 隐藏序号和图标
+    .section-number {
+      display: none;
+    }
+    
+    .section-icon {
+      display: none;
+    }
+    
+    .section-title {
+      h2 {
+        font-size: 2.2rem;
+        font-weight: var(--bold);
+        color: var(--primary);
+        margin: 0;
+        line-height: 1.3;
+      }
+      
+      // 隐藏副标题
+      .section-subtitle {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  
+  // 板块内容 - 左右布局
+  .section-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+  }
+  
+  // 图片展示区包装器（包含图片和按钮）
+  .section-gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  // 图片展示区
+  .section-gallery {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--light-gray);
+    min-height: 350px;
+    
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 4px;
+        
+        &:hover {
+          background: var(--accent);
+        }
+      }
+    }
+    
+    .gallery-item {
+      min-width: 100%;
+      scroll-snap-align: start;
+      
+      img, video {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        display: block;
+      }
+      
+      .placeholder {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #E8F3E8, #F8FBF8);
+        color: var(--gray);
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 30px;
+        
+        small {
+          display: block;
+          font-size: 0.95rem;
+          margin-top: 8px;
+        }
+      }
+    }
+    
+    // 滚动提示
+    .scroll-hint {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(95, 184, 120, 0.9);
+      color: white;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+  }
+  
+  // 文字描述区
+  .section-description {
+    h3 {
+      font-size: 1.5rem;  // 调大字体
+      color: var(--accent);
+      margin-top: 20px;
+      margin-bottom: 15px;
+      font-weight: var(--bold);
+    }
+    
+    p {
+      line-height: 1.8;
+      margin-bottom: 18px;
+      font-size: 1.15rem;  // 调大字体
+      color: var(--text);
+    }
+    
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+      
+      li {
+        padding-left: 30px;
+        margin-bottom: 14px;
+        position: relative;
+        line-height: 1.8;
+        font-size: 1.15rem;  // 调大字体
+        
+        &::before {
+          content: "✓";
+          position: absolute;
+          left: 0;
+          color: var(--primary);
+          font-weight: var(--bold);
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  
+  // 链接按钮区
+  .section-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    
+    // 当按钮在section-gallery-wrapper内时（图片下方）
+    .section-gallery-wrapper & {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+    
+    // 当按钮在section-description内时（文字区域）
+    .section-description & {
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid var(--light-gray);
+    }
+    
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;  // 增大按钮
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: var(--bold);  // 字体加粗
+      transition: all 0.3s ease;
+      font-size: 1.15rem;  // 调大字体
+      
+      i {
+        font-size: 1.2rem;  // 调大图标
+      }
+      
+      &:hover {
+        background: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(95, 184, 120, 0.3);
+      }
+      
+      &.secondary {
+        background: var(--background-alt);
+        color: var(--primary);
+        border: 2px solid var(--primary);
+        
+        &:hover {
+          background: var(--primary);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+// 页面介绍文字
+.page-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-bottom: 50px;
+  width: 100%;
+  line-height: 1.8;
+  padding: 30px 60px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 2px 15px rgba(95, 184, 120, 0.1);
+  
+  @media (max-width: 768px) {
+    padding: 20px 30px;
+    font-size: 1.05rem;
+  }
+}

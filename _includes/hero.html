@@ -1,0 +1,122 @@
+<!-- 水杉中文 - 优化布局 -->
+<div id="particles-js"></div>
+
+<!-- 固定导航栏 - 右上角 -->
+<nav class="fixed-nav">
+    <div class="nav-links">
+        <!-- 首页链接 -->
+        {% if site.lang == "zh" %}
+        <a href="{{site.baseurl_root}}/" class="active-home">
+            {% t titles.home %}
+        </a>
+        {% else %}
+        <a href="{{site.baseurl_root}}/{{site.lang}}/" class="active-home">
+            {% t titles.home %}
+        </a>
+        {% endif %}
+        
+        {% assign pages = site.pages
+            | where_exp: "page", "page.nav"
+            | sort: "nav.order"
+        %}
+        {% for page in pages %}
+        {% if page.nav %}
+            {% if site.lang == "zh" %}
+            <a href="{{site.baseurl_root}}{{ page.dir | uri_escape }}">
+                {% t page.title %}
+            </a>
+            {% else %}
+            <a href="{{site.baseurl_root}}/{{site.lang}}{{ page.dir | uri_escape }}">
+                {% t page.title %}
+            </a>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        
+        <!-- 语言切换 -->
+        {% if site.lang == "zh" %}
+        <a class="lang-switch" href="{{site.baseurl_root}}/en{{ page.url | url_escape }}">EN</a>
+        {% else %}
+        <a class="lang-switch" href="{{site.baseurl_root}}{{ page.url | url_escape | remove_first:'/en' }}">中文</a>
+        {% endif %}
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <!-- 左侧：Logo -->
+            <div class="hero-logo-section">
+                <img src="/images/logo.png" alt="水杉中文 Logo" class="main-logo"/>
+            </div>
+            
+            <!-- 右侧：标题和信息 -->
+            <div class="hero-info-section">
+                <!-- 标题 -->
+                <div class="hero-titles">
+                    {% if site.lang == "zh" %}
+                    <h1 class="title-line chinese">水杉中文-智慧中文学习平台</h1>
+                    <h2 class="title-line english bold">Shuishan Chinese Education-Intelligent Language Learning Platform</h2>
+                    {% else %}
+                    <h1 class="title-line english bold">Shuishan Chinese Education-Intelligent Language Learning Platform</h1>
+                    <h2 class="title-line chinese">水杉中文-智慧中文学习平台</h2>
+                    {% endif %}
+                </div>
+                
+                  <!-- 平台理念 -->
+                  <div class="info-block concept-block">
+                     <span class="info-label">{% if site.lang == "zh" %}平台理念{% else %}Platform Concept{% endif %}</span>
+                     <p class="info-text"><strong>个性化学</strong>：以学习者为中心、覆盖"教、学、评、练、测、用"的语言学习全链路</p>
+                     <p class="info-text"><strong>场景驱动</strong>：场景适配的学习内容，满足"听、说、读、写、译"的沉浸式学习体验</p>
+                     <p class="info-text"><strong>数据赋能</strong>：中文学情精准评估、促进语言技能、语言知识、语言文化的系统性构建</p>
+                  </div>
+                
+                  <!-- 核心技术 -->
+                  <div class="info-block tech-block">
+                      <span class="info-label">{% if site.lang == "zh" %}核心技术{% else %}Core Technologies{% endif %}</span>
+                      <p class="info-text centered bold">语言教育数据赋能、人工智能科技引领、中文教育知识图谱支撑</p>
+                  </div>
+                
+                <!-- 快捷按钮 -->
+                <div style="text-align: center;" class="hero-actions" >
+                    <a href="{{site.baseurl_root}}/{{site.lang}}/projects/" class="action-btn primary">
+                        {% if site.lang == "zh" %}了解平台{% else %}Learn More{% endif %}
+                    </a>
+                    <a href="{{site.baseurl_root}}/{{site.lang}}/contact/" class="action-btn secondary">
+                        {% if site.lang == "zh" %}联系我们{% else %}Contact Us{% endif %}
+                    </a>
+                    <!-- 社交媒体图标 -->
+                    <!-- <div class="sns-icons">
+                        {% if site.links.email %}
+                        <a href="mailto:{{ site.links.email }}" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
+                        {% endif %}
+                        {% if site.links.github %}
+                        <a href="https://github.com/{{ site.links.github }}" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        {% endif %}
+                        {% if site.links['google-scholar'] %}
+                        <a href="https://scholar.google.com/citations?user={{ site.links['google-scholar'] }}" target="_blank" title="Google Scholar">
+                          <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        {% endif %}
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 最新动态轮播图 -->
+{% if site.data.slider_hp and site.data.slider_hp.size > 0 %}
+<section class="homepage-slider-section">
+    <div class="slider-wrapper">
+        <h2 class="slider-title">{% if site.lang == "zh" %}最新动态{% else %}Latest News{% endif %}</h2>
+        {% include slider.html data="slider_hp" %}
+    </div>
+</section>
+{% endif %}
+
+<footer class="trademark-text">© {{ 'now' | date: '%Y' }} 水杉中文 | Shuishan Chinese. All rights reserved.</footer>
+
+<!-- 背景图片层 -->
+<div class="hero-background"></div>
+<div class="video-bg-overlay"></div>

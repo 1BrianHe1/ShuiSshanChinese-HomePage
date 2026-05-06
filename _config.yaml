@@ -1,0 +1,78 @@
+# site properties and page defaults
+title: 水杉中文
+subtitle: AI赋能的国际中文在线学习平台
+description: 基于人工智能技术的创新中文学习平台，致力于为全球学习者提供智能化、个性化的在线学习体验。
+header: /images/background_2.jpg  # 可替换为淡绿色背景图
+footer: /images/background.jpg    # 可替换为淡绿色背景图
+proofer: false
+
+# site social media and other links
+links:
+  email: your.email@example.com
+  # orcid: 0000-0000-0000-0000
+  # google-scholar: your-scholar-id
+  # github: your-github
+  # twitter: your-twitter
+  # youtube: your-youtube
+  # instagram: your-instagram
+
+### jekyll settings
+
+# front matter defaults
+defaults:
+  # all markdown files
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # markdown files in /_members
+  - scope:
+      type: "members"
+    values:
+      layout: member
+  # markdown files in /_posts
+  - scope:
+      type: "posts"
+    values:
+      layout: post
+collections:
+  # generate page for each member
+  members:
+    output: true
+  # generate page for each post
+  posts:
+    output: true
+
+# jekyll plugins
+plugins:
+  - jekyll-spaceship
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-last-modified-at
+  - jekyll-multiple-languages-plugin
+
+languages: ["zh", "en"]
+exclude_from_localizations: ["_scripts", "images", "_styles", "files"]
+default_locale_in_subfolder: false
+
+# code block syntax highlighting
+highlighter: rouge
+
+# jekyll theme
+theme: null
+
+# sass settings
+sass:
+  sass_dir: _styles
+
+# force jekyll to include certain files/folders
+include:
+  - _styles
+  - _scripts
+
+# force jekyll to exclude certain files/folders
+exclude:
+  - README.md
+  - LICENSE.md
+  - CITATION.cff

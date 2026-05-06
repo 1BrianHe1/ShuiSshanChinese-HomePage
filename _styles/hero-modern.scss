@@ -1,0 +1,242 @@
+---
+---
+
+// 水杉中文 - 现代化 Hero 样式
+
+.hero-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #F8FBF8 0%, #E8F3E8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+// Hero 头部 - Logo 和语言切换
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.hero-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.hero-logo {
+  height: 60px;
+  width: auto;
+  transition: transform var(--transition);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.lang-switch {
+  .lang-link {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: var(--background);
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: var(--semi-bold);
+    transition: all var(--transition);
+
+    &:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(95, 184, 120, 0.3);
+    }
+  }
+}
+
+// 轮播图区域
+.hero-slider {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+// 主要内容区域
+.hero-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-text {
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: var(--bold);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 30px;
+  font-weight: var(--regular);
+  
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-bottom: 15px;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.hero-tech {
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 40px;
+  font-weight: var(--semi-bold);
+  
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+}
+
+// 导航按钮
+.hero-nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.hero-nav-btn {
+  padding: 12px 30px;
+  background: var(--primary);
+  color: var(--background);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: var(--semi-bold);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all var(--transition);
+  box-shadow: 0 4px 12px rgba(95, 184, 120, 0.2);
+
+  &:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(95, 184, 120, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+// 社交媒体图标
+.hero-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+
+  a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-alt);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 1.3rem;
+    transition: all var(--transition);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: var(--primary);
+      color: var(--background);
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 4px 12px rgba(95, 184, 120, 0.3);
+    }
+  }
+}
+
+// 页脚
+.hero-footer {
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--gray);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+// 动画效果
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 响应式设计
+@media (max-width: 768px) {
+  .hero-header {
+    padding: 15px 20px;
+  }
+
+  .hero-logo {
+    height: 45px;
+  }
+
+  .hero-content {
+    padding: 40px 20px;
+  }
+
+  .hero-slider {
+    max-height: 300px;
+  }
+}

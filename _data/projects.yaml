@@ -1,0 +1,24 @@
+# 水杉中文 - 研究项目
+# 在这里添加项目信息
+#
+# 示例格式：
+# - title: 项目名称
+#   group: active  # active=进行中, completed=已完成
+#   image: images/projects/project1.jpg
+#   link: projects/project-name/
+#   description: 项目简短描述
+#   tags:
+#     - AI
+#     - 在线教育
+#     - 中文学习
+
+# 主项目
+- title: 水杉中文 - AI赋能的国际中文在线学习平台
+  group: active
+  image: images/projects/shuishan-chinese.jpg
+  description: 基于人工智能技术的国际中文在线学习平台
+  tags:
+    - AI
+    - 在线教育
+    - 中文学习
+    - NLP

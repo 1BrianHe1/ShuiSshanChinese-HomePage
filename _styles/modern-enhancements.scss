@@ -1,0 +1,161 @@
+---
+---
+
+// 水杉中文 - 现代化增强样式
+
+// 平滑滚动
+html {
+  scroll-behavior: smooth;
+}
+
+// 页面整体优化
+body {
+  line-height: 1.7;  // 更舒适的行高
+  letter-spacing: 0.3px;  // 轻微的字母间距
+}
+
+// 标题样式优化
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  line-height: 1.3;
+}
+
+// 链接优化
+a {
+  transition: all var(--transition);
+}
+
+a:not(.button):hover {
+  color: var(--primary);
+}
+
+// 图片优化
+img {
+  border-radius: var(--rounded);
+}
+
+// 列表优化
+ul, ol {
+  line-height: 1.8;
+}
+
+// 强调文字
+strong, b {
+  color: var(--primary);
+  font-weight: var(--bold);
+}
+
+// 代码块优化
+code {
+  background: var(--light-gray);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+// 引用块优化
+blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 20px;
+  margin-left: 0;
+  color: var(--gray);
+  font-style: italic;
+}
+
+// 表格优化
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th {
+  background: var(--primary);
+  color: var(--background);
+  padding: 12px;
+  text-align: left;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+tr:hover {
+  background: var(--light-gray);
+}
+
+// 输入框优化
+input, textarea, select {
+  border: 2px solid var(--light-gray);
+  border-radius: var(--rounded);
+  padding: 10px;
+  transition: border-color var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(95, 184, 120, 0.1);
+}
+
+// 页面加载动画
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+main > section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+// 水杉中文品牌色渐变背景（可选）
+.gradient-bg {
+  background: linear-gradient(135deg, #F8FBF8 0%, #E8F3E8 100%);
+}
+
+// 特色区块样式
+.feature-box {
+  background: var(--background-alt);
+  border-left: 4px solid var(--primary);
+  padding: 20px;
+  border-radius: var(--rounded);
+  margin: 20px 0;
+  box-shadow: var(--shadow);
+}
+
+// 国际化现代卡片网格
+.modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+// 徽章样式
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--secondary);
+  color: var(--text);
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: var(--semi-bold);
+  margin: 0 5px;
+}
+
+// 分隔线优化
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--light-gray), transparent);
+  margin: 40px 0;
+}

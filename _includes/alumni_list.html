@@ -1,0 +1,53 @@
+{%- assign past_staff_all = site.data.past_staff -%}
+
+{% comment %} --- 1a. 教職員のみ抽出 --- {% endcomment %}
+{%- assign past_faculty = past_staff_all | where: "role", "faculty" | sort: "name" -%}
+
+{%- if past_faculty.size > 0 -%}
+  
+  {%- if site.lang == "jp" -%}
+    <h2>教職員</h2>
+  {%- else -%}
+    <h2>Faculty</h2>
+  {%- endif -%}
+  
+  {%- include alumni_role_list.html members_list=past_faculty -%}
+
+{%- endif -%}
+
+
+{% comment %} --- 1b. 短期留学生のみ抽出 --- {% endcomment %}
+{%- assign past_short_terms = past_staff_all | where: "role", "is" | sort: "name" -%}
+
+{%- if past_short_terms.size > 0 -%}
+
+  {%- if site.lang == "jp" -%}
+    <h2>短期留学生</h2>
+  {%- else -%}
+    <h2>Visiting Students</h2>
+  {%- endif -%}
+  
+  {%- include alumni_role_list.html members_list=past_short_terms -%}
+
+{%- endif -%}
+
+{%- assign alumni_years = site.data.alumni | keys -%}
+
+{%- assign sorted_fiscal_years = alumni_years | sort | reverse -%}
+
+{%- for year_to_display in sorted_fiscal_years -%}
+
+  {%- assign members_list = site.data.alumni[year_to_display].members -%}
+  
+  {%- if members_list.size > 0 -%}
+    {%- if site.lang == "jp" -%}
+      <h2>{{ year_to_display }}年度 卒業</h2>
+    {%- else -%}
+      <h2>Alumni of Fiscal Year {{ year_to_display }}</h2>
+    {%- endif -%}
+    
+    {%- include alumni_role_list.html members_list=members_list -%}
+    
+  {%- endif -%}
+
+{%- endfor -%}

@@ -1,0 +1,42 @@
+{% unless page.url == "/" or page.url == "/zh/" or page.url == "/en/" %}
+<!-- 固定导航栏 - 用于子页面 -->
+<nav class="fixed-nav">
+    <div class="nav-links">
+        <!-- 首页链接 -->
+        {% if site.lang == "zh" %}
+        <a href="{{site.baseurl_root}}/">
+            {% t titles.home %}
+        </a>
+        {% else %}
+        <a href="{{site.baseurl_root}}/{{site.lang}}/">
+            {% t titles.home %}
+        </a>
+        {% endif %}
+        
+        {% assign pages = site.pages
+            | where_exp: "page", "page.nav"
+            | sort: "nav.order"
+        %}
+        {% for page in pages %}
+        {% if page.nav %}
+            {% if site.lang == "zh" %}
+            <a href="{{site.baseurl_root}}{{ page.dir | uri_escape }}">
+                {% t page.title %}
+            </a>
+            {% else %}
+            <a href="{{site.baseurl_root}}/{{site.lang}}{{ page.dir | uri_escape }}">
+                {% t page.title %}
+            </a>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        
+        <!-- 语言切换 -->
+        {% if site.lang == "zh" %}
+        <a class="lang-switch" href="{{site.baseurl_root}}/en{{ page.url | url_escape }}">EN</a>
+        {% else %}
+        <a class="lang-switch" href="{{site.baseurl_root}}{{ page.url | url_escape | remove_first:'/en' }}">中文</a>
+        {% endif %}
+    </div>
+</nav>
+{% endunless %}

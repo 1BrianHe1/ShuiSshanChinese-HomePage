@@ -1,0 +1,71 @@
+{% if include.lookup %}
+  {% assign member = site.members 
+    | where_exp: "member", "member.slug == include.lookup"
+    | first
+  %}
+{% else %}
+  {% assign member = include %}
+{% endif %}
+
+{% assign join_year = member.date | date: "%Y" | plus: 0 %}
+{% assign join_month = member.date | date: "%m" | plus: 0 %}
+
+{% assign now_year = site.time | date: "%Y" | plus: 0 %}
+{% assign now_month = site.time | date: "%m" | plus: 0 %}
+
+{% assign diff_year = now_year | minus: join_year %}
+{% assign diff_month = now_month | minus: join_month %}
+{% assign diff_month_total = diff_year | times: 12 | plus: diff_month %}
+{% assign seniority = diff_month_total | divided_by: 12 | plus: 1 %}
+
+{% assign type = site.data.types[member.role] %}
+
+<div class="portrait-wrapper">
+  <div
+    class="portrait"
+    data-style="{{ include.style }}"
+    aria-label="{{ member.name | default: "member link" | regex_strip }}"
+  >
+    <div style="background-image: url('{{ member.image | prepend: site.baseurl_root }}')"
+        class="portrait-image"
+        alt="member portrait"
+        loading="lazy"
+        {% include fallback.html %}
+    ></div>
+
+    {% if member.description or type %}
+      <span class="portrait-description">
+        {% if site.lang == "jp" %}
+          {{ member.description_jp | default: type.description_jp }}{% if member.role != "pi" and member.role != "ap" and member.role != "pd" and member.role != "vr" and member.role != "s" and member.role != "is" %}{{seniority}}{% endif %}
+        {% else %}
+          {{ member.description | default: type.description }}{% if member.role != "pi" and member.role != "ap" and member.role != "pd" and member.role != "vr" and member.role != "s" and member.role != "is" %}{{seniority}}{% endif %}
+        {% endif %}      
+      </span>
+      
+      <span class="badges">
+        {% for badge in member.badges %}
+          <span class="badge">{{ badge }}</span>
+        {% endfor %}
+      </span>
+      {% if member.name %}
+        <a {% if member.url != nil %}
+          href="{{ member.url | relative_url | uri_escape }}"
+        {% endif %}>
+          <span class="portrait-name">
+            {% if site.lang == "jp" %}
+              {{ member.name_jp }}
+            {% else %}
+              {{ member.name }}
+            {% endif %}
+          </span>
+        </a>
+      {% endif %}
+    {% endif %}
+
+    {% if member.affiliation %}
+      <span class="portrait-affiliation">
+        {{ member.affiliation }}
+      </span>
+    {% endif %}
+    </div>
+</div>

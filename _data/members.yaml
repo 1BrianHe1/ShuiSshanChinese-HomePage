@@ -1,0 +1,151 @@
+# 水杉中文项目团队成员
+# 华东师范大学数据科学与工程学院、国际汉语文化学院和华东师范大学孔子学院工作办公室
+
+# ========== 数据科学与工程学院 ==========
+
+- name: 周傲英
+  name_en: Zhou Aoying
+  image: /images/team/prof/ZAY.png
+  role: pi
+  department: dase
+  description: 教授
+  links:
+    email: ayzhou@dase.ecnu.edu.cn
+
+- name: 钱卫宁
+  name_en: Qian Weining
+  image: /images/team/prof/QWN.jpg
+  role: pi
+  department: dase
+  description: 教授
+  links:
+    email: wnqian@dase.ecnu.edu.cn
+
+- name: 高明
+  name_en: Gao Ming
+  image: /images/team/prof/GM.jpg
+  role: pi
+  department: dase
+  description: 教授
+  links:
+    email: mgao@dase.ecnu.edu.cn
+    
+- name: 董启文
+  name_en: Dong Qiwen
+  image: /images/team/prof/DQW.jpg
+  role: pi
+  department: dase
+  description: 教授
+  links:
+    email: qwdong@dase.ecnu.edu.cn
+
+- name: 蒲鹏
+  name_en: Pu Peng
+  image: /images/team/prof/PP.png
+  role: pi
+  department: dase
+  description: 教授
+  links:
+    email: ppu@dase.ecnu.edu.cn
+
+- name: 陆雪松
+  name_en: Lu Xuesong
+  image: /images/team/prof/LXS.jpg
+  role: ap
+  department: dase
+  description: 副教授
+  links:
+    email: xslu@dase.ecnu.edu.cn
+
+- name: 王晔
+  name_en: Wang Ye
+  image: /images/team/prof/WY (2).jpg
+  role: pd
+  department: dase
+  description: 研究员
+  links:
+    email: ywang@dase.ecnu.edu.cn
+
+- name: 王龑
+  name_en: Wang Yan
+  image: /images/team/prof/WY.jpg
+  role: pd
+  department: dase
+  description: 研究员
+  links:
+    email: ywan@dase.ecnu.edu.cn
+
+- name: 兰韵诗
+  name_en: Lan Yunshi
+  image: /images/team/prof/LYS.jpg
+  role: ap
+  department: dase
+  description: 副教授
+  links:
+    email: yslan@dase.ecnu.edu.cn
+
+- name: 王春阳
+  name_en: Wang Chunyang
+  image: /images/team/prof/WCY.jpg
+  role: ap
+  department: dase
+  description: 讲师
+  links:
+    email: cywang@dase.ecnu.edu.cn
+
+- name: 张奕超
+  name_en: Zhang Yichao
+  image: /images/team/prof/ZYC.jpg
+  role: pd
+  department: dase
+  description: 研究员
+  links:
+    email: yczhang@dase.ecnu.edu.cn
+
+# ========== 国际汉语文化学院 ==========
+
+
+- name: 张建民
+  name_en: Zhang Jianmin
+  image: /images/team/prof_chinese/ZJM.webp
+  role: pi
+  department: sichcc
+  description: 教授
+  links:
+    email: jmzhang@sichcc.ecnu.edu.cn
+
+- name: 丁安琪
+  name_en: Ding Anqi
+  image: /images/team/prof_chinese/DAQ.jpg
+  role: pd
+  department: sichcc
+  description: 研究员
+  links:
+    email: aqding@sichcc.ecnu.edu.cn
+
+- name: 袁丹
+  name_en: Yuan Dan
+  image: /images/team/prof_chinese/YD.jpg
+  role: pd
+  department: sichcc
+  description: 研究员
+  links:
+    email: dyuan@sichcc.ecnu.edu.cn
+
+- name: 周勇
+  name_en: Zhou Yong
+  image: /images/team/prof_chinese/ZY.jpg
+  role: ap
+  department: sichcc
+  description: 副教授
+  links:
+    email: yzh@sichcc.ecnu.edu.cn
+
+- name: 梁远远
+  name_en: Liang Yuanyuan
+  image: /images/team/prof_chinese/LYY.jpg
+  role: pd
+  department: sichcc
+  description: 研究员
+  links:
+    email: yyliang@sichcc.ecnu.edu.cn
