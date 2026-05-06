@@ -1,13 +1,13 @@
 <figure class="figure">
   <a
     {% if include.link %}
-      href="{{ include.link | prepend: site.baseurl_root | uri_escape }}"
+      href="{{ include.link | prepend: '/' | replace: '//', '/' | prepend: site.baseurl_root | uri_escape }}"
     {% endif %}
     class={% if include.no_shadow %} "figure-image-noshadow" {% else %} "figure-image" {% endif %}
     aria-label="{{ include.caption | default: "figure link" | regex_strip }}"
   >
     <img
-      src="{{ include.image | prepend: site.baseurl_root | uri_escape }}"
+      src="{{ include.image | prepend: '/' | replace: '//', '/' | prepend: site.baseurl_root | uri_escape }}"
       style="
         width: {{ include.width | default: "auto" }};
         max-height: {{ include.height | default: "unset" }};

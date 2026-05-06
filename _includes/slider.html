@@ -29,7 +29,7 @@
                 <ul>
                         {% for image in data %}
                                 <li>
-                                        <img src="{{ image.url }}" alt="{{ image.alt }}">
+                                        <img src="{{ image.url | prepend: '/' | replace: '//', '/' | prepend: site.baseurl_root }}" alt="{{ image.alt }}">
                                         <span class="caption">{{ image.caption }}</span>
                                 </li>
                         {% endfor %}

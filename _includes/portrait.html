@@ -26,7 +26,7 @@
     data-style="{{ include.style }}"
     aria-label="{{ member.name | default: "member link" | regex_strip }}"
   >
-    <div style="background-image: url('{{ member.image | prepend: site.baseurl_root }}')"
+    <div style="background-image: url('{{ member.image | prepend: '/' | replace: '//', '/' | prepend: site.baseurl_root }}')"
         class="portrait-image"
         alt="member portrait"
         loading="lazy"
